@@ -5,7 +5,7 @@
 </div>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/hero.zh.svg" width="100%" alt="dsh-files 将本地文件经过上传、检索和带版本坐标回读，转化为可追溯证据，并保留原生视觉链路。">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/hero.zh.svg" width="100%" alt="dsh-files 将本地文件经过上传、检索和带版本坐标回读，转化为可追溯证据，并保留原生视觉链路。">
 </p>
 
 # dsh-files
@@ -15,7 +15,7 @@
 在 Web 输入框上传文件或整个文件夹。解析和索引都留在本机。模型先检索紧凑证据，再按需展开准确的页码、幻灯片、行区间或表格范围——而不是把全文塞进 prompt，也不用退回 Python 遍历。栅格图片继续走 Harness 原生视觉链路。
 
 > [!IMPORTANT]
-> **当前是源码 Beta，尚未发布 npm。** npm 上目前不存在 `@cooberped/dsh-files@beta`，请使用下方[源码安装](#从源码安装)。
+> **当前是源码 Beta，尚未发布 npm。** npm 上目前不存在 `@cooberped/dsh-evidence@beta`，请使用下方[源码安装](#从源码安装)。
 
 ## 它怎么工作
 
@@ -28,7 +28,7 @@
 文件不再只是 prompt 负担，而成为可寻址、可回读的证据。整个设计就是这一件事。
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/architecture.zh.svg" width="100%" alt="dsh-files 架构：输入框、本地摄取、私有检索、模型工具以及原生视觉分支。">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/architecture.zh.svg" width="100%" alt="dsh-files 架构：输入框、本地摄取、私有检索、模型工具以及原生视觉分支。">
 </p>
 
 ## 从源码安装
@@ -36,7 +36,7 @@
 需要：带 `web` profile 的 DeepSeek Harness CLI（已验证基线为 npm `@deepseek-ai/dsh@0.1.1-rc.2`）、Node.js `>=20.12.0`、`PATH` 中可用的 `pnpm`。
 
 ```sh
-git clone https://github.com/Cooberped/dsh-files.git
+git clone https://github.com/Cooberped/dsh-evidence.git
 cd dsh-files
 pnpm install --frozen-lockfile
 pnpm build
@@ -46,7 +46,7 @@ dsh --profile web --dump-config     # 确认组合配置中已有该 bundle laye
 dsh web                             # 重启
 ```
 
-本地安装是对当前 checkout 的链接：拉取更新后重新执行 `pnpm install --frozen-lockfile && pnpm build` 并重启。卸载用 `dsh plugin --profile web remove @cooberped/dsh-files`。
+本地安装是对当前 checkout 的链接：拉取更新后重新执行 `pnpm install --frozen-lockfile && pnpm build` 并重启。卸载用 `dsh plugin --profile web remove @cooberped/dsh-evidence`。
 
 <details>
 <summary>未来的 npm Beta——目前尚不可用</summary>
@@ -54,7 +54,7 @@ dsh web                             # 重启
 只有在仓库发布 Gate 与 npm trusted publishing 全部闭合后，安装方式才会变成：
 
 ```sh
-dsh plugin --profile web add @cooberped/dsh-files@beta
+dsh plugin --profile web add @cooberped/dsh-evidence@beta
 # 重启 dsh web
 ```
 
@@ -88,7 +88,7 @@ profile/plugin 合同遵循官方 [Harness 插件参考](https://github.com/deep
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/evidence-loop.zh.svg" width="100%" alt="推荐的模型证据循环：盘点、检索、展开，再根据通过版本校验的证据回答。">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/evidence-loop.zh.svg" width="100%" alt="推荐的模型证据循环：盘点、检索、展开，再根据通过版本校验的证据回答。">
 </p>
 
 ## 两个工具
@@ -220,7 +220,7 @@ dsh --profile web --dump-config
 | 项目 | 公开源码 Beta，由 Cooberped 独立维护 |
 | Harness 基线 | 已按 npm `@deepseek-ai/dsh@0.1.1-rc.2` 的 `web` profile 验证 |
 | 真实环境验收目标模型 | OpenCode Go — DeepSeek V4 Flash |
-| npm | **尚未发布。** 包元数据声明目标为 `@cooberped/dsh-files@0.6.0-beta.1`；scope 所有权、trusted publishing 与首次发布许可 Gate 尚未闭合 |
+| npm | **尚未发布。** 包元数据声明目标为 `@cooberped/dsh-evidence@0.6.0-beta.1`；scope 所有权、trusted publishing 与首次发布许可 Gate 尚未闭合 |
 | 兼容性 | 未经单独验收，不宣称兼容更新的 Harness 源码版本线 |
 
 本项目**不是 DeepSeek 官方插件**，与 DeepSeek 不存在隶属或官方背书关系。它也不是 clean-room 重写：仓库保留 MIT 许可的 [taxueseek/dsh-files](https://github.com/taxueseek/dsh-files) 历史；本文所述检索、坐标、安全、性能与发布治理层由 Cooberped 继续独立开发。

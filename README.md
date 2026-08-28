@@ -5,7 +5,7 @@
 </div>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/hero.svg" width="100%" alt="dsh-files turns local files into versioned evidence through upload, retrieval, coordinate reads, and native vision.">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/hero.svg" width="100%" alt="dsh-files turns local files into versioned evidence through upload, retrieval, coordinate reads, and native vision.">
 </p>
 
 # dsh-files
@@ -15,7 +15,7 @@
 Upload files or a whole folder from the Web composer. Parsing and indexing stay on your machine. The model searches for compact evidence and expands only the exact page, slide, line range or spreadsheet range it needs — instead of pasting whole documents into the prompt or shelling out to Python. Raster images stay on Harness' native vision path.
 
 > [!IMPORTANT]
-> **Source beta — not published to npm yet.** `@cooberped/dsh-files@beta` does not exist on npm at this time. Use the [source install](#install-from-source) below.
+> **Source beta — not published to npm yet.** `@cooberped/dsh-evidence@beta` does not exist on npm at this time. Use the [source install](#install-from-source) below.
 
 ## How it works
 
@@ -28,7 +28,7 @@ Upload files or a whole folder from the Web composer. Parsing and indexing stay 
 Files become addressable evidence rather than prompt baggage. That is the whole design.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/architecture.svg" width="100%" alt="dsh-files architecture: composer, local ingest, private retrieval, model tools, and native vision branch.">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/architecture.svg" width="100%" alt="dsh-files architecture: composer, local ingest, private retrieval, model tools, and native vision branch.">
 </p>
 
 ## Install from source
@@ -36,7 +36,7 @@ Files become addressable evidence rather than prompt baggage. That is the whole 
 You need the DeepSeek Harness CLI with the `web` profile (validated baseline: npm `@deepseek-ai/dsh@0.1.1-rc.2`), Node.js `>=20.12.0`, and `pnpm` on `PATH`.
 
 ```sh
-git clone https://github.com/Cooberped/dsh-files.git
+git clone https://github.com/Cooberped/dsh-evidence.git
 cd dsh-files
 pnpm install --frozen-lockfile
 pnpm build
@@ -46,7 +46,7 @@ dsh --profile web --dump-config     # confirm the bundle layer is present
 dsh web                             # restart
 ```
 
-The install is a link to this checkout: after pulling updates, re-run `pnpm install --frozen-lockfile && pnpm build` and restart. Remove it with `dsh plugin --profile web remove @cooberped/dsh-files`.
+The install is a link to this checkout: after pulling updates, re-run `pnpm install --frozen-lockfile && pnpm build` and restart. Remove it with `dsh plugin --profile web remove @cooberped/dsh-evidence`.
 
 <details>
 <summary>Future npm beta — not available yet</summary>
@@ -54,7 +54,7 @@ The install is a link to this checkout: after pulling updates, re-run `pnpm inst
 Once the repository release gates and npm trusted publishing are complete, installation becomes:
 
 ```sh
-dsh plugin --profile web add @cooberped/dsh-files@beta
+dsh plugin --profile web add @cooberped/dsh-evidence@beta
 # restart dsh web
 ```
 
@@ -88,7 +88,7 @@ If the documents do not contain enough evidence, say what is missing instead of 
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Cooberped/dsh-files/main/assets/readme/evidence-loop.svg" width="100%" alt="Recommended model evidence loop: inventory, retrieve, expand, and answer from version-checked evidence.">
+  <img src="https://raw.githubusercontent.com/Cooberped/dsh-evidence/main/assets/readme/evidence-loop.svg" width="100%" alt="Recommended model evidence loop: inventory, retrieve, expand, and answer from version-checked evidence.">
 </p>
 
 ## The two tools
@@ -220,7 +220,7 @@ Less common settings and their authoritative defaults live in [`src/index.ts`](s
 | Project | Public source beta, independently maintained by Cooberped |
 | Harness baseline | Tested against npm `@deepseek-ai/dsh@0.1.1-rc.2` with the `web` profile |
 | Runtime acceptance target | OpenCode Go — DeepSeek V4 Flash |
-| npm | **Not published.** Package metadata targets `@cooberped/dsh-files@0.6.0-beta.1`; scope ownership, trusted publishing and the first-release license gate remain open |
+| npm | **Not published.** Package metadata targets `@cooberped/dsh-evidence@0.6.0-beta.1`; scope ownership, trusted publishing and the first-release license gate remain open |
 | Compatibility | Newer Harness source trains are not claimed compatible until separately tested |
 
 This is **not an official DeepSeek plugin** and is not affiliated with or endorsed by DeepSeek. It is also not a clean-room rewrite: the MIT-licensed history of [taxueseek/dsh-files](https://github.com/taxueseek/dsh-files) is retained, while Cooberped independently develops the retrieval, coordinate, security, performance and release layers described here.

@@ -2,8 +2,9 @@
 
 ## 0.6.0-beta.1（Cooberped 社区发布候选，尚未发布 npm）
 
-- 以保留完整历史的公开 fork 形式转由 `Cooberped/dsh-files` 独立维护；继续保留 `taxueseek/dsh-files` 的 MIT 版权与 upstream 归属。
-- npm 包名改为计划中的 `@cooberped/dsh-files`，并用 `beta` dist-tag 防止 prerelease 误占 `latest`。
+- 转由 `Cooberped/dsh-evidence` 独立维护，保留完整 commit 历史；继续保留 `taxueseek/dsh-files` 的 MIT 版权与 upstream 归属。
+- 仓库脱离 fork 网络并改名为 `dsh-evidence`：GitHub 默认把 fork 排除在仓库搜索之外（实测 `dsh-files user:Cooberped` 返回 0 条，加 `fork:true` 才返回 1 条），且原名与上游完全同名。归属关系由 git 历史、LICENSE 与 README 承载，不依赖 fork 标记。
+- npm 包名改为计划中的 `@cooberped/dsh-evidence`，并用 `beta` dist-tag 防止 prerelease 误占 `latest`。
 - DSH peer 依赖收紧为真实验收使用的 `0.1.1-rc.2`；README 明示 Developer Preview 与 Node 持久索引能力边界。
 - 增加社区治理、发布、第三方许可、素材来源和只读 CI 门禁；真实 HR 文件、会话索引及本机日志不进入仓库或 npm 包。
 - 将开发构建依赖 `esbuild` 升至 `0.25.12`，关闭 GHSA-67mh-4wv8-2f99；完整依赖审计无已知漏洞。

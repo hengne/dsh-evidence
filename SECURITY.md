@@ -23,7 +23,7 @@ policy change.
 ## Reporting a vulnerability / 报告漏洞
 
 1. **Preferred:** use GitHub Private Vulnerability Reporting at
-   `https://github.com/Cooberped/dsh-files/security/advisories/new` when the
+   `https://github.com/Cooberped/dsh-evidence/security/advisories/new` when the
    repository has that feature enabled.
 2. If that page is unavailable, do **not** open a public issue. Use a private
    contact method currently published on the `@Cooberped` GitHub profile and
